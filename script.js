@@ -1,4 +1,4 @@
-// Открытие модального окна
+// Открытие модального окн
 document.querySelectorAll('.open-modal').forEach(button => {
   button.addEventListener('click', () => {
     const modalId = button.getAttribute('data-modal');
@@ -25,3 +25,4 @@ window.addEventListener('click', (event) => {
     }
   });
 });
+ 
