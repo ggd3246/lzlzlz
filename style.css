@@ -348,8 +348,7 @@ section button:hover {
     height: 35vw;
     animation: spinEaseOut 11s ease-out forwards;
     margin-bottom: 20px;
-    max-height: 200px;
-max-width: 200px;
+   
 }
 
 @keyframes spinEaseOut {
@@ -401,4 +400,88 @@ max-width: 200px;
         font-size: 16px;
         padding: 10px 18px;
     }
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .header {
+    margin: 15px auto;
+  }
+
+  .banner-container img {
+    width: 90%;
+  }
+
+  .banner-text {
+    font-size: 16px;
+    padding: 10px;
+    word-spacing: 2px;
+    white-space: normal;
+  }
+
+  section {
+    padding: 40px 20px;
+    margin: 20px auto;
+    width: 95%;
+  }
+
+  section button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+    font-size: 15px;
+  }
+
+  .slider {
+    height: 180px;
+  }
+
+  .slides img {
+    height: 180px;
+  }
+
+  .prev, .next {
+    font-size: 18px;
+    padding: 6px;
+  }
+
+  .dot {
+    height: 8px;
+    width: 8px;
+  }
+
+  .rules-container {
+    padding: 20px;
+    font-size: 15px;
+  }
+
+  .site-footer {
+    padding: 15px;
+    font-size: 15px;
+  }
+
+  .site-footer a {
+    font-size: 15px;
+  }
+
+  #glitch-title {
+    font-size: 20px;
+  }
+
+  #rotating-earth {
+    width: 160px;
+    height: 160px;
+  }
+
+  #enter-site-btn {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
 }
