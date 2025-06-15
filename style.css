@@ -163,21 +163,44 @@ section button:hover {
     color: rgb(0, 0, 0);
     padding: 30px 20px;
     text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    border-radius: 20px;
+    margin: 20px;
 }
 
+/* Стили для ссылки */
 .site-footer a {
-     background-color: rgba(17, 15, 114, 0.4); /* полупрозрачный чёрный */
-  color: #000000;                          /* белый текст */
-  padding: 4px 6px;                     /* пространство вокруг текста */
-  border-radius: 6px;                   /* скруглённые углы */
-  display: inline-block;
+    background-color: rgba(17, 15, 114, 0.4); /* полупрозрачный тёмный фон */
+    color: #000000;
+    padding: 6px 10px;
+    border-radius: 8px;
+    display: inline-block;
     text-decoration: none;
-
+    font-weight: bold;
 }
 
+/* Наведение */
 .site-footer a:hover {
     text-decoration: underline;
 }
+
+/* 🔁 Мобильная адаптация */
+@media (max-width: 600px) {
+    .site-footer {
+        padding: 20px 10px;
+        font-size: 16px;
+        margin: 10px;
+    }
+
+    .site-footer a {
+        display: block;
+        margin-top: 10px;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
 
 
 /* === изображение — общее использование === */
