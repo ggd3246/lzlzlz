@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* === твой CSS без изменений === */
+=======
+>>>>>>> f6b1f33490843dee9af9c7c2feb4d4922154403d
 * {
   box-sizing: border-box;
 }
@@ -6,7 +9,11 @@
 html, body {
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
   overflow-x: hidden;
+=======
+  overflow-x: hidden; /* 👈 Это убирает горизонтальный скролл */
+>>>>>>> f6b1f33490843dee9af9c7c2feb4d4922154403d
 }
 
 body {
@@ -25,8 +32,13 @@ body {
   margin: 50px auto;
   width: fit-content;
   border-radius: 80px;
+<<<<<<< HEAD
   background: linear-gradient(337deg, rgba(237, 28, 28, 1) 0%, rgba(251, 255, 0, 1) 50%, rgba(214, 6, 2, 1) 100%);
   flex-wrap: wrap;
+=======
+  background: linear-gradient(337deg,rgba(237, 28, 28, 1) 0%, rgba(251, 255, 0, 1) 50%, rgba(214, 6, 2, 1) 100%);
+  flex-wrap: wrap; /* 👈 чтобы адаптировалось под маленькие экраны */
+>>>>>>> f6b1f33490843dee9af9c7c2feb4d4922154403d
 }
 
 .horizontal-strip a {
@@ -47,7 +59,11 @@ body {
 
 section {
   padding: 100px 50px;
+<<<<<<< HEAD
   background: linear-gradient(320deg, rgba(181, 0, 27, 1) 0%, rgba(13, 0, 0, 1) 50%, rgba(158, 13, 13, 1) 100%);
+=======
+  background: linear-gradient(320deg,rgba(181, 0, 27, 1) 0%, rgba(13, 0, 0, 1) 50%, rgba(158, 13, 13, 1) 100%);
+>>>>>>> f6b1f33490843dee9af9c7c2feb4d4922154403d
   margin: 50px auto;
   width: 80%;
   border-radius: 30px;
@@ -81,7 +97,11 @@ section button:hover {
 }
 
 .modal-content {
+<<<<<<< HEAD
   background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+=======
+  background: linear-gradient(90deg,rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+>>>>>>> f6b1f33490843dee9af9c7c2feb4d4922154403d
   margin: 10% auto;
   padding: 30px;
   width: 80%;
@@ -137,7 +157,11 @@ background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, 
 .rules-container {
   max-width: 700px;
   margin: 0 auto;
+<<<<<<< HEAD
   background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+=======
+  background: linear-gradient(90deg,rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+>>>>>>> f6b1f33490843dee9af9c7c2feb4d4922154403d
   padding: 25px;
   border-radius: 12px;
 }
@@ -189,6 +213,7 @@ background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, 
   left: 15px;
 }
 
+<<<<<<< HEAD
 .next {
   right: 15px;
 }
@@ -214,3 +239,5 @@ background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, 
   background-color: #fff;
 }
 
+=======
+>>>>>>> f6b1f33490843dee9af9c7c2feb4d4922154403d
