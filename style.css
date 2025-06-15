@@ -49,7 +49,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Georgia', serif;
-  font-size: 20px;
+  
   color: #442200;
   text-shadow: 1px 1px 2px #fff;
   white-space: nowrap;
@@ -301,4 +301,104 @@ section button:hover {
   .slides img {
     height: 200px;
   }
+}
+
+/* Заставка с фоном */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("19.png") no-repeat center center / cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 1s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Текст "Ля ля ля" с глитч-эффектом */
+#glitch-title {
+    color: white;
+    font-size: 2.5em;
+    font-family: monospace;
+    margin-bottom: 20px;
+    animation: glitch 2s infinite;
+    opacity: 0;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 0 red, -2px 0 blue; }
+    20% { text-shadow: -2px 0 red, 2px 0 blue; }
+    40% { text-shadow: 2px 2px red, -2px -2px blue; }
+    60% { text-shadow: -2px -2px red, 2px 2px blue; }
+    80% { text-shadow: 0 0 red, 0 0 blue; }
+    100% { text-shadow: 2px 0 red, -2px 0 blue; }
+}
+
+/* Вращающаяся земля */
+#rotating-earth {
+    width: 35vw;
+    height: 35vw;
+    animation: spinEaseOut 11s ease-out forwards;
+    margin-bottom: 20px;
+    max-height: 200px;
+max-width: 200px;
+}
+
+@keyframes spinEaseOut {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(3600deg); } /* 10 оборотов */
+}
+
+/* Кнопка */
+#enter-site-btn {
+    display: block;
+    opacity: 0;
+    transform: scale(0.8);
+    padding: 12px 20px;
+    font-size: 18px;
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1), rgba(253, 187, 45, 1));
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    animation: fadeInZoom 1s ease forwards;
+    animation-delay: 11s;
+}
+
+@keyframes fadeInZoom {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Наведение на кнопку */
+#enter-site-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(253, 187, 45, 0.6);
+}
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+    #glitch-title {
+        font-size: 1.8em;
+    }
+
+    #rotating-earth {
+        width: 200px;
+        height: 200px;
+    }
+
+    #enter-site-btn {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
 }

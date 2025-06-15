@@ -62,3 +62,11 @@ window.addEventListener('resize', () => {
 
 showSlide(slideIndex);
 setInterval(() => showSlide(slideIndex + 1), 6000);
+
+  document.getElementById("enter-site-btn").addEventListener("click", function () {
+    document.getElementById("splash-screen").style.opacity = "0";
+    setTimeout(() => {
+      document.getElementById("splash-screen").style.display = "none";
+    }, 1000); // Совпадает с CSS transition
+  });
+
