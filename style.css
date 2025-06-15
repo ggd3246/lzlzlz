@@ -221,9 +221,9 @@ background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, 
 }
 
 .slider-img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
+  width: 100% !important;
+  max-width: 250px !important;
+  height: auto !important;
   border-radius: 10px;
   display: block;
   margin: 0 auto;
