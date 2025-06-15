@@ -10,46 +10,93 @@ html, body {
 }
 
 body {
-  background: linear-gradient(90deg, rgba(232, 12, 45, 1) 0%, rgba(87, 9, 54, 1) 50%, rgba(128, 25, 25, 1) 100%);
-  font-family: sans-serif;
-  color: rgb(245, 240, 240);
-  scroll-behavior: smooth;
-}
-
-/* === горизонтальная навигация === */
-.horizontal-strip {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  border: 10px solid black;
-  padding: 20px;
-  margin: 50px auto;
-  width: fit-content;
-  border-radius: 80px;
-  background: linear-gradient(337deg, rgba(237, 28, 28, 1) 0%, rgba(251, 255, 0, 1) 50%, rgba(214, 6, 2, 1) 100%);
-  flex-wrap: wrap;
-}
-
-.horizontal-strip a {
-  text-decoration: none;
-  color: rgb(255, 249, 249);
-  transition: 0.3s;
-}
-
-.horizontal-strip a:hover {
-  color: blue;
-  transform: scale(1.1);
-}
-
-.horizontal-strip h2 {
   margin: 0;
-  cursor: pointer;
+  padding: 0;
+  
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background: url('16.png')
 }
+
+/* ===== Шапка ===== */
+.header {
+  text-align: center;
+  margin: 25px auto;
+}
+
+/* ===== Картинка с текстом ===== */
+.banner-container {
+  position: relative;
+  display: inline-block;
+  width: 90%;
+  max-width: 1100px; /* увеличена ширина */
+  height: auto;
+ 
+}
+
+.banner-container img {
+  width: 54%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.banner-text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Georgia', serif;
+  font-size: 20px;
+  color: #442200;
+  text-shadow: 1px 1px 2px #fff;
+  white-space: nowrap;
+  margin: 5px;
+  padding: 12px 24px;
+  border-radius: 14px;
+  text-align: center;
+  word-spacing: 7px; /* ← расстояние между словами */
+}
+
+
+/* === Убрать синюю рамку === */
+.banner-text:focus,
+.banner-text:active {
+  outline: none;
+  border: none;
+}
+
+/* ===== Адаптация под телефон ===== */
+@media (max-width: 768px) {
+  .banner-container {
+    width: 90%;
+  }
+
+  .banner-text {
+    font-size: 18px;
+    white-space: normal;
+    padding: 8px 12px;
+  }
+}
+
+.banner-text a {
+  color: #442200; /* тот же цвет, что и у текста */
+  text-decoration: none; /* убрать подчёркивание */
+  font-weight: bold; /* по желанию */
+}
+
+.banner-text a:hover {
+  text-shadow: 1px 1px 2px #fff;
+  color: #000; /* эффект при наведении (по желанию) */
+}
+
 
 /* === секции === */
 section {
   padding: 100px 50px;
-  background: linear-gradient(320deg, rgba(181, 0, 27, 1) 0%, rgba(13, 0, 0, 1) 50%, rgba(158, 13, 13, 1) 100%);
+ 
   margin: 50px auto;
   width: 80%;
   border-radius: 30px;
@@ -110,26 +157,28 @@ section button:hover {
 
 /* === футер === */
 .site-footer {
-  text-align: center;
-  padding: 20px;
-  background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
-  color: white;
-  font-size: 16px;
-  margin-top: 50px;
-  border-radius: 10px;
+    background-image: url('17.png');
+    background-size: cover;
+    background-position: center;
+    color: rgb(0, 0, 0);
+    padding: 30px 20px;
+    text-align: center;
 }
 
 .site-footer a {
-  color: #1da1f2;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+     background-color: rgba(17, 15, 114, 0.4); /* полупрозрачный чёрный */
+  color: #000000;                          /* белый текст */
+  padding: 4px 6px;                     /* пространство вокруг текста */
+  border-radius: 6px;                   /* скруглённые углы */
+  display: inline-block;
+    text-decoration: none;
+
 }
 
 .site-footer a:hover {
-  color: #4ec5f7;
-  text-decoration: underline;
+    text-decoration: underline;
 }
+
 
 /* === изображение — общее использование === */
 .foto {
