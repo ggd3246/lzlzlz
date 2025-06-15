@@ -1,58 +1,64 @@
 
   // ---------- МОДАЛКИ ----------
-  document.querySelectorAll('.open-modal').forEach(button => {
-    button.addEventListener('click', () => {
-      const modalId = button.getAttribute('data-modal');
-      const modal = document.getElementById(modalId);
-      if (modal) {
-        modal.style.display = 'block';
-      }
-    });
+  // ---------- МОДАЛКИ ----------
+document.querySelectorAll('.open-modal').forEach(button => {
+  button.addEventListener('click', () => {
+    const modalId = button.getAttribute('data-modal');
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.style.display = 'block';
+    }
   });
+});
 
-  document.querySelectorAll('.modal .close').forEach(closeBtn => {
-    closeBtn.addEventListener('click', () => {
-      const modal = closeBtn.closest('.modal');
-      if (modal) {
-        modal.style.display = 'none';
-      }
-    });
+document.querySelectorAll('.modal .close').forEach(closeBtn => {
+  closeBtn.addEventListener('click', () => {
+    const modal = closeBtn.closest('.modal');
+    if (modal) {
+      modal.style.display = 'none';
+    }
   });
+});
 
-  window.addEventListener('click', (event) => {
-    document.querySelectorAll('.modal').forEach(modal => {
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
+window.addEventListener('click', (event) => {
+  document.querySelectorAll('.modal').forEach(modal => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
   });
+});
 
-  // ---------- СЛАЙДЕР ----------
-  let slideIndex = 0;
-  const slides = document.querySelectorAll('.slides img');
-  const dots = document.querySelectorAll('.dot');
-  const totalSlides = Math.min(slides.length, 5); // максимум 5 слайдов
+// ---------- СЛАЙДЕР ----------
+let slideIndex = 0;
+const slidesContainer = document.querySelector('.slides');
+const slides = document.querySelectorAll('.slides img');
+const dots = document.querySelectorAll('.dot');
+const totalSlides = Math.min(slides.length, 5); // максимум 5 слайдов
 
-  function showSlide(index) {
-    if (index >= totalSlides) slideIndex = 0;
-    else if (index < 0) slideIndex = totalSlides - 1;
-    else slideIndex = index;
+function showSlide(index) {
+  if (index >= totalSlides) slideIndex = 0;
+  else if (index < 0) slideIndex = totalSlides - 1;
+  else slideIndex = index;
 
-    const slideWidth = document.querySelector('.slider').clientWidth;
-    const offset = -slideIndex * slideWidth;
-    document.querySelector('.slides').style.transform = `translateX(${offset}px)`;
+  const slideWidth = document.querySelector('.slider').clientWidth;
+  const offset = -slideIndex * slideWidth;
+  slidesContainer.style.transform = `translateX(${offset}px)`;
 
-    dots.forEach(dot => dot.classList.remove('active'));
-    if (dots[slideIndex]) dots[slideIndex].classList.add('active');
-  }
+  dots.forEach(dot => dot.classList.remove('active'));
+  if (dots[slideIndex]) dots[slideIndex].classList.add('active');
+}
 
-  document.querySelector('.prev').addEventListener('click', () => showSlide(slideIndex - 1));
-  document.querySelector('.next').addEventListener('click', () => showSlide(slideIndex + 1));
+document.querySelector('.prev').addEventListener('click', () => showSlide(slideIndex - 1));
+document.querySelector('.next').addEventListener('click', () => showSlide(slideIndex + 1));
 
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => showSlide(i));
-  });
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => showSlide(i));
+});
 
+window.addEventListener('resize', () => {
+  // при изменении ширины пересчитать позицию
   showSlide(slideIndex);
-  setInterval(() => showSlide(slideIndex + 1), 6000);
+});
 
+showSlide(slideIndex);
+setInterval(() => showSlide(slideIndex + 1), 6000);

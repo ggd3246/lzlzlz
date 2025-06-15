@@ -198,24 +198,27 @@
     </div>
 
 
-    <!-- 🎯 Единственный нужный слайдер -->
-   <div class="slider-section">
-  <h2 style="text-align: center; color: white;">Разные фото сервера..</h2>
-
-  <div class="slider">
-    <div class="slides" id="slideContainer">
-      <img src="1.jpeg" alt="Slide 1" />
-      <img src="2.jpeg" alt="Slide 2" />
-      <img src="3.jpeg" alt="Slide 3" />
-      <img src="4.jpeg" alt="Slide 4" />
-      <img src="5.jpeg" alt="Slide 5" />
-    </div>
-
-    <!-- Кнопки -->
-    <button class="nav prev" onclick="moveSlide(-1)">❮</button>
-    <button class="nav next" onclick="moveSlide(1)">❯</button>
+ <!-- === Слайдер === -->
+<div class="slider">
+  <div class="slides" id="slider-track">
+    <img src="1.jpeg" alt="Слайд 1"></img>
+    <img src="2.jpeg" alt="Слайд 2"></img>
+    <img src="3.jpeg" alt="Слайд 2"></img>
+    <img src="4.jpeg" alt="Слайд 3"></img>
+     <img src="5.jpeg" alt="Слайд 3"></img>
+    
   </div>
+
+  <!-- Кнопки -->
+  <button class="prev" onclick="changeSlide(-1)">❮</button>
+  <button class="next" onclick="changeSlide(1)">❯</button>
 </div>
+
+<!-- Точки -->
+<div class="dots" id="slider-dots"></div>
+
+
+
 
 
         <div class="dots">
