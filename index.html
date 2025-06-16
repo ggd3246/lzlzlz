@@ -23,14 +23,22 @@
     <div class="header">
   <div class="banner-container">
     <img src="15.png" alt="Свиток">
-    <div class="banner-text">
+
+    <!-- Верхние ссылки -->
+    <div class="banner-text top-links">
       <a href="#moderators">модераторы</a>
       <a href="#rules">правила</a>
-      <a href="#honor">доска почета</a>
+      <a href="#honor">доска почёта</a>
+    </div>
+
+    <!-- Нижние ссылки -->
+    <div class="banner-text bottom-links">
       <a href="#facts">факты</a>
+      <a href="#bed">Bed Wars</a>
     </div>
   </div>
 </div>
+
 
 
     <!-- Раздел: Модераторы -->
@@ -83,13 +91,13 @@
 </section>
 
 <!-- Раздел: Галерея -->
-<section class="gallery-block image-section" style="background-image: url('17.png');">
-    <div class="section-content">
-        <h2 style="text-align: center;">Фото Bed Wars</h2>
-        <div style="text-align: center;">
-            <button class="open-modal" data-modal="photoGalleryModal">Показать все фото</button>
-        </div>
+<section id="bed" class="image-section" style="background-image: url('17.png');">
+  <div class="section-content">
+    <h2 id="photo-title" style="text-align: center;">Фото Bed Wars</h2>
+    <div style="text-align: center;">
+      <button class="open-modal" data-modal="photoGalleryModal">Показать все фото</button>
     </div>
+  </div>
 </section>
 
 
@@ -219,7 +227,7 @@
 
 
  <!-- === Слайдер === -->
-<div class="slider">
+<div class="slider"  >
   <div class="slides" id="slider-track">
     <img src="1.jpeg" alt="Слайд 1"></img>
     <img src="2.jpeg" alt="Слайд 2"></img>

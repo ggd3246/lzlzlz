@@ -21,77 +21,59 @@ body {
 }
 
 /* ===== Шапка ===== */
-.header {
-  text-align: center;
-  margin: 25px auto;
-}
-
-/* ===== Картинка с текстом ===== */
 .banner-container {
   position: relative;
-  display: inline-block;
-  width: 90%;
-  max-width: 1100px; /* увеличена ширина */
-  height: auto;
- 
-}
-
-.banner-container img {
-  width: 54%;
-  height: auto;
-  display: block;
+  max-width: 700px;
   margin: 0 auto;
 }
 
+.banner-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Общий стиль текста */
 .banner-text {
   position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Georgia', serif;
-  
-  color: #442200;
-  text-shadow: 1px 1px 2px #fff;
-  white-space: nowrap;
-  margin: 5px;
-  padding: 12px 24px;
-  border-radius: 14px;
+  width: 100%;
   text-align: center;
-  word-spacing: 7px; /* ← расстояние между словами */
+  font-family: 'Minecraft', sans-serif;
+  font-size: 1.2em;
 }
 
-
-/* === Убрать синюю рамку === */
-.banner-text:focus,
-.banner-text:active {
-  outline: none;
-  border: none;
+/* Верхний блок */
+.top-links {
+  top: 40%;
 }
 
-/* ===== Адаптация под телефон ===== */
-@media (max-width: 768px) {
-  .banner-container {
-    width: 90%;
-  }
-
-  .banner-text {
-    font-size: 18px;
-    white-space: normal;
-    padding: 8px 12px;
-  }
+/* Нижний блок */
+.bottom-links {
+  bottom: 50%;
 }
 
+/* Ссылки */
 .banner-text a {
-  color: #442200; /* тот же цвет, что и у текста */
-  text-decoration: none; /* убрать подчёркивание */
-  font-weight: bold; /* по желанию */
+  margin: 0 10px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.banner-text a:hover {
-  text-shadow: 1px 1px 2px #fff;
-  color: #000; /* эффект при наведении (по желанию) */
-}
+/* Для телефона */
+@media (max-width: 600px) {
+  .banner-text {
+    font-size: 1em;
+  }
 
+  .top-links {
+    top: 18%;
+  }
+
+  .bottom-links {
+    bottom: 18%;
+  }
+}
 
 /* === секции === */
 section {
@@ -321,15 +303,31 @@ section button:hover {
     text-align: center;
 }
 
-/* Текст "Ля ля ля" с глитч-эффектом */
+/* Заставка */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('19.png') no-repeat center center / cover; /* Заменить bg.jpg на своё фото */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 1s ease;
+}
+
+/* Глитч текст */
 #glitch-title {
     color: white;
-    font-size: 2.5em;
+    font-size: 7vw;
     font-family: monospace;
     margin-bottom: 20px;
     animation: glitch 2s infinite;
     opacity: 0;
-    animation-delay: 3s;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
 }
 
@@ -342,18 +340,19 @@ section button:hover {
     100% { text-shadow: 2px 0 red, -2px 0 blue; }
 }
 
-/* Вращающаяся земля */
+/* Земля */
 #rotating-earth {
-    width: 35vw;
-    height: 35vw;
-    animation: spinEaseOut 11s ease-out forwards;
+    width: 80vw;
+    max-width: 250px;
+    height: auto;
+    animation: spinEaseOut 10s ease-out forwards;
     margin-bottom: 20px;
-   
 }
 
 @keyframes spinEaseOut {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(3600deg); } /* 10 оборотов */
+    0%   { transform: rotate(0deg); }
+    90%  { transform: rotate(3420deg); }  /* почти 9.5 оборота */
+    100% { transform: rotate(3600deg); }  /* плавная остановка */
 }
 
 /* Кнопка */
@@ -361,15 +360,15 @@ section button:hover {
     display: block;
     opacity: 0;
     transform: scale(0.8);
-    padding: 12px 20px;
-    font-size: 18px;
-    background: linear-gradient(0deg, rgba(34, 193, 195, 1), rgba(253, 187, 45, 1));
+    padding: 12px 12px;
+    font-size: 2vw;
+    background: linear-gradient(0deg, rgba(34,193,195,1), rgba(253,187,45,1));
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
     transition: 0.3s ease;
     animation: fadeInZoom 1s ease forwards;
-    animation-delay: 11s;
+    animation-delay: 9s;
 }
 
 @keyframes fadeInZoom {
@@ -379,11 +378,11 @@ section button:hover {
     }
 }
 
-/* Наведение на кнопку */
 #enter-site-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(253, 187, 45, 0.6);
+    box-shadow: 0 0 10px rgba(253,187,45,0.6);
 }
+
 
 /* Мобильная адаптация */
 @media (max-width: 600px) {
@@ -469,6 +468,91 @@ section button:hover {
 
   .site-footer a {
     font-size: 15px;
+  }
+
+  #glitch-title {
+    font-size: 20px;
+  }
+
+  #rotating-earth {
+    width: 160px;
+    height: 160px;
+  }
+
+  #enter-site-btn {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .banner-container img {
+    width: 90%;
+  }
+
+  .banner-text {
+    font-size: 16px;
+    padding: 10px;
+    word-spacing: 2px;
+    white-space: normal;
+  }
+
+  section {
+    padding: 40px 20px;
+    margin: 20px auto;
+    width: 95%;
+  }
+
+  section button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+    font-size: 15px;
+  }
+
+  .slider {
+    height: 180px;
+    max-width: 100%;
+  }
+
+  .slides img {
+    height: 180px;
+  }
+
+  .prev, .next {
+    font-size: 18px;
+    padding: 6px;
+  }
+
+  .dot {
+    height: 8px;
+    width: 8px;
+  }
+
+  .rules-container {
+    padding: 20px;
+    font-size: 15px;
+  }
+
+  .site-footer {
+    padding: 15px;
+    font-size: 15px;
+  }
+
+  .site-footer a {
+    font-size: 15px;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
   }
 
   #glitch-title {
