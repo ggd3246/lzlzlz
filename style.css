@@ -19,12 +19,31 @@ body {
   overflow-x: hidden;
   background: url('16.png')
 }
+
 /* ===== Шапка ===== */
 .banner-container {
   position: relative;
   max-width: 700px;
   margin: 0 auto;
 }
+
+.banner-text.link-row {
+  position: absolute;
+  top: 33%; /* 🔼 БЫЛО 42%, теперь по центру свитка */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 90%;
+  text-align: center;
+  font-family: 'Minecraft', sans-serif;
+  font-size: 1.2em;
+  white-space: normal;
+  padding: 0 10px;
+}
+
 
 .banner-container img {
   width: 100%;
@@ -35,14 +54,10 @@ body {
 /* Общий стиль текста */
 .banner-text {
   position: absolute;
-  width: 99%;
+  width: 100%;
   text-align: center;
   font-family: 'Minecraft', sans-serif;
-  font-size: 36px; /* ПК */
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* чтобы текст не вылезал */
-  gap: 10px;
+  font-size: 1.2em;
 }
 
 /* Верхний блок */
@@ -52,40 +67,31 @@ body {
 
 /* Нижний блок */
 .bottom-links {
-  bottom: 20%;
+  bottom: 29%;
 }
 
 /* Ссылки */
 .banner-text a {
+  margin: 0 10px;
   color: black;
   text-decoration: none;
   font-weight: bold;
-  padding: 4px 8px;
- 
- 
-  border-radius: 6px;
 }
 
-/* Адаптация под телефон */
+/* Для телефона */
 @media (max-width: 600px) {
   .banner-text {
-    font-size: 24px; /* меньше размер шрифта */
-    gap: 6px;
+    font-size: 1em;
   }
 
   .top-links {
-    top: 32%;
+    top: 18%;
   }
 
   .bottom-links {
-    bottom: 12%;
-  }
-
-  .banner-text a {
-    padding: 3px 6px;
+    bottom: 18%;
   }
 }
-
 
 /* === секции === */
 section {
