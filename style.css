@@ -10,14 +10,10 @@ html, body {
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  
   font-family: sans-serif;
   color: rgb(0, 0, 0);
   scroll-behavior: smooth;
-  overflow-x: hidden;
-  background: url('16.png')
+  background: url('16.png');
 }
 
 /* ===== Шапка ===== */
@@ -27,9 +23,15 @@ body {
   margin: 0 auto;
 }
 
+.banner-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .banner-text.link-row {
   position: absolute;
-  top: 33%; /* 🔼 БЫЛО 42%, теперь по центру свитка */
+  top: 33%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -44,11 +46,11 @@ body {
   padding: 0 10px;
 }
 
-
-.banner-container img {
-  width: 100%;
-  height: auto;
-  display: block;
+.banner-text a {
+  margin: 0 10px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* Общий стиль текста */
@@ -70,33 +72,9 @@ body {
   bottom: 29%;
 }
 
-/* Ссылки */
-.banner-text a {
-  margin: 0 10px;
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* Для телефона */
-@media (max-width: 600px) {
-  .banner-text {
-    font-size: 1em;
-  }
-
-  .top-links {
-    top: 18%;
-  }
-
-  .bottom-links {
-    bottom: 18%;
-  }
-}
-
 /* === секции === */
 section {
   padding: 100px 50px;
- 
   margin: 50px auto;
   width: 80%;
   border-radius: 30px;
@@ -157,51 +135,31 @@ section button:hover {
 
 /* === футер === */
 .site-footer {
-    background-image: url('17.png');
-    background-size: cover;
-    background-position: center;
-    color: rgb(0, 0, 0);
-    padding: 30px 20px;
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.6;
-    border-radius: 20px;
-    margin: 20px;
+  background-image: url('17.png');
+  background-size: cover;
+  background-position: center;
+  color: rgb(0, 0, 0);
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  border-radius: 20px;
+  margin: 20px;
 }
 
-/* Стили для ссылки */
 .site-footer a {
-    background-color: rgba(17, 15, 114, 0.4); /* полупрозрачный тёмный фон */
-    color: #000000;
-    padding: 6px 10px;
-    border-radius: 8px;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: bold;
+  background-color: rgba(17, 15, 114, 0.4);
+  color: #000000;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* Наведение */
 .site-footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
-/* 🔁 Мобильная адаптация */
-@media (max-width: 600px) {
-    .site-footer {
-        padding: 20px 10px;
-        font-size: 16px;
-        margin: 10px;
-    }
-
-    .site-footer a {
-        display: block;
-        margin-top: 10px;
-        font-size: 16px;
-        text-align: center;
-    }
-}
-
-
 
 /* === изображение — общее использование === */
 .foto {
@@ -244,7 +202,6 @@ section button:hover {
   border-radius: 15px;
 }
 
-/* Кнопки управления */
 .prev, .next {
   position: absolute;
   top: 50%;
@@ -262,15 +219,9 @@ section button:hover {
   background-color: rgba(255, 255, 255, 1);
 }
 
-.prev {
-  left: 15px;
-}
+.prev { left: 15px; }
+.next { right: 15px; }
 
-.next {
-  right: 15px;
-}
-
-/* Точки навигации */
 .dots {
   text-align: center;
   margin-top: 12px;
@@ -291,141 +242,90 @@ section button:hover {
   background-color: #fff;
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-  .slider {
-    max-width: 95%;
-    height: 200px;
-  }
-
-  .slides img {
-    height: 200px;
-  }
-}
-
-/* Заставка с фоном */
+/* === Заставка с фоном === */
 #splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("19.png") no-repeat center center / cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    transition: opacity 1s ease;
-    padding: 20px;
-    text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('19.png') no-repeat center center / cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
+  padding: 20px;
+  text-align: center;
 }
 
-/* Заставка */
-#splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: url('19.png') no-repeat center center / cover; /* Заменить bg.jpg на своё фото */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    transition: opacity 1s ease;
-}
-
-/* Глитч текст */
 #glitch-title {
-    color: white;
-    font-size: 7vw;
-    font-family: monospace;
-    margin-bottom: 20px;
-    animation: glitch 2s infinite;
-    opacity: 0;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
+  color: white;
+  font-size: 7vw;
+  font-family: monospace;
+  margin-bottom: 20px;
+  animation: glitch 2s infinite;
+  opacity: 0;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes glitch {
-    0% { text-shadow: 2px 0 red, -2px 0 blue; }
-    20% { text-shadow: -2px 0 red, 2px 0 blue; }
-    40% { text-shadow: 2px 2px red, -2px -2px blue; }
-    60% { text-shadow: -2px -2px red, 2px 2px blue; }
-    80% { text-shadow: 0 0 red, 0 0 blue; }
-    100% { text-shadow: 2px 0 red, -2px 0 blue; }
+  0% { text-shadow: 2px 0 red, -2px 0 blue; }
+  20% { text-shadow: -2px 0 red, 2px 0 blue; }
+  40% { text-shadow: 2px 2px red, -2px -2px blue; }
+  60% { text-shadow: -2px -2px red, 2px 2px blue; }
+  80% { text-shadow: 0 0 red, 0 0 blue; }
+  100% { text-shadow: 2px 0 red, -2px 0 blue; }
 }
 
-/* Земля */
 #rotating-earth {
-    width: 80vw;
-    max-width: 250px;
-    height: auto;
-    animation: spinEaseOut 10s ease-out forwards;
-    margin-bottom: 20px;
+  width: 80vw;
+  max-width: 250px;
+  height: auto;
+  animation: spinEaseOut 10s ease-out forwards;
+  margin-bottom: 20px;
 }
 
 @keyframes spinEaseOut {
-    0%   { transform: rotate(0deg); }
-    90%  { transform: rotate(3420deg); }  /* почти 9.5 оборота */
-    100% { transform: rotate(3600deg); }  /* плавная остановка */
+  0%   { transform: rotate(0deg); }
+  90%  { transform: rotate(3420deg); }
+  100% { transform: rotate(3600deg); }
 }
 
-/* Кнопка */
 #enter-site-btn {
-    display: block;
-    opacity: 0;
-    transform: scale(0.8);
-    padding: 12px 12px;
-    font-size: 2vw;
-    background: linear-gradient(0deg, rgba(34,193,195,1), rgba(253,187,45,1));
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    animation: fadeInZoom 1s ease forwards;
-    animation-delay: 9s;
+  display: block;
+  opacity: 0;
+  transform: scale(0.8);
+  padding: 12px 12px;
+  font-size: 2vw;
+  background: linear-gradient(0deg, rgba(34,193,195,1), rgba(253,187,45,1));
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  animation: fadeInZoom 1s ease forwards;
+  animation-delay: 9s;
 }
 
 @keyframes fadeInZoom {
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 #enter-site-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(253,187,45,0.6);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(253,187,45,0.6);
 }
 
-
-/* Мобильная адаптация */
-@media (max-width: 600px) {
-    #glitch-title {
-        font-size: 1.8em;
-    }
-
-    #rotating-earth {
-        width: 200px;
-        height: 200px;
-    }
-
-    #enter-site-btn {
-        font-size: 16px;
-        padding: 10px 18px;
-    }
-}
+/* === Мобильная адаптация === */
 @media (max-width: 600px) {
   body {
     font-size: 14px;
     padding: 0 10px;
-  }
-
-  .header {
-    margin: 15px auto;
   }
 
   .banner-container img {
@@ -437,6 +337,19 @@ section button:hover {
     padding: 10px;
     word-spacing: 2px;
     white-space: normal;
+  }
+
+  .banner-text.link-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .top-links {
+    top: 18%;
+  }
+
+  .bottom-links {
+    bottom: 18%;
   }
 
   section {
@@ -457,6 +370,7 @@ section button:hover {
   }
 
   .slider {
+    max-width: 95%;
     height: 180px;
   }
 
@@ -482,88 +396,7 @@ section button:hover {
   .site-footer {
     padding: 15px;
     font-size: 15px;
-  }
-
-  .site-footer a {
-    font-size: 15px;
-  }
-
-  #glitch-title {
-    font-size: 20px;
-  }
-
-  #rotating-earth {
-    width: 160px;
-    height: 160px;
-  }
-
-  #enter-site-btn {
-    font-size: 14px;
-    padding: 8px 14px;
-  }
-}
-
-@media (max-width: 600px) {
-  body {
-    font-size: 14px;
-    padding: 0 10px;
-  }
-
-  .banner-container img {
-    width: 90%;
-  }
-
-  .banner-text {
-    font-size: 16px;
-    padding: 10px;
-    word-spacing: 2px;
-    white-space: normal;
-  }
-
-  section {
-    padding: 40px 20px;
-    margin: 20px auto;
-    width: 95%;
-  }
-
-  section button {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
-
-  .modal-content {
-    width: 95%;
-    padding: 20px;
-    font-size: 15px;
-  }
-
-  .slider {
-    height: 180px;
-    max-width: 100%;
-  }
-
-  .slides img {
-    height: 180px;
-  }
-
-  .prev, .next {
-    font-size: 18px;
-    padding: 6px;
-  }
-
-  .dot {
-    height: 8px;
-    width: 8px;
-  }
-
-  .rules-container {
-    padding: 20px;
-    font-size: 15px;
-  }
-
-  .site-footer {
-    padding: 15px;
-    font-size: 15px;
+    margin: 10px;
   }
 
   .site-footer a {
