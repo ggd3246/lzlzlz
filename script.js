@@ -56,20 +56,7 @@ document.getElementById("enter-site-btn").addEventListener("click", function () 
   }, 1000);
 });
 
-// ---------- РЕГИСТРАЦИЯ ----------
-document.getElementById("register-btn").addEventListener("click", function () {
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
 
-  if (username && password) {
-    document.getElementById("registration-form").style.display = "none";
-    document.getElementById("profile-icon").style.display = "block";
-    document.getElementById("chat-button").style.display = "flex";
-    alert(`Добро пожаловать, ${username}!`);
-  } else {
-    alert("Пожалуйста, введите имя и пароль.");
-  }
-});
 
 // ---------- ПРОФИЛЬ ----------
 function toggleProfile() {

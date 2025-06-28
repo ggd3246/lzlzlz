@@ -490,40 +490,6 @@ background: linear-gradient(182deg,rgba(37, 77, 28, 1) 0%, rgba(43, 240, 59, 1) 
   box-sizing: border-box;
 }
 
-.form-container input {
-  display: block;
-  margin: 10px auto;
-  padding: 12px;
-  width: 100%;
-  max-width: 260px;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-.form-container button {
-  padding: 12px 20px;
-  background: #99cc16;
-  background: linear-gradient(90deg, rgba(153, 204, 22, 1) 0%, rgba(245, 233, 5, 1) 35%, rgba(196, 196, 16, 1) 100%);
-  color: rgb(0, 0, 0);
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  width: 100%;
-  max-width: 260px;
-}
-
-/* картинка слона/коалы */
-.koala-image {
-  width: 100px;
-  height: 50px;
-  object-fit: contain;
-  position: absolute;
-  top: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
 
 /* мобильная адаптация */
 @media (max-width: 480px) {
