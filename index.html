@@ -11,92 +11,180 @@
 <body>
 
     <!-- Заставка -->
-<div id="splash-screen">
-    <h1 id="glitch-title">Ля ля ля</h1>
-    <img src="18.png" id="rotating-earth" alt="Земля">
-    <button id="enter-site-btn">Зайти на сайт</button>
-</div>
-
-
-
-
-   <div class="header">
-  <div class="banner-container">
-    <img src="15.png" alt="Свиток">
-
-    <!-- Все ссылки в одной строке -->
-    <div class="banner-text link-row">
-      <a href="#moderators">модераторы</a>
-      <a href="#rules">правила</a>
-      <a href="#honor">доска почёта</a>
-      <a href="#facts">факты</a>
-      <a href="#bed">Bed Wars</a>
+    <div id="splash-screen">
+        <h1 id="glitch-title">Ля ля ля</h1>
+        <img src="18.png" id="rotating-earth" alt="Земля">
+        <button id="enter-site-btn">Зайти на сайт</button>
     </div>
-  </div>
-</div>
+
+    <div id="registration-form" style="display: none;">
+        <div class="form-container">
+            <h2>Регистрация</h2>
+            <input type="text" id="username" placeholder="Имя" required>
+            <input type="password" id="password" placeholder="Пароль" required>
+            <button id="register-btn">Войти</button>
+            <p id="login-message" style="color: red; margin-top: 10px;"></p>
+        </div>
+    </div>
+
+
+
+    <!-- Иконка профиля -->
+    <div id="profile-icon" onclick="toggleProfile()" style="display: none;">
+        <img src="20.png" alt="Профиль" />
+    </div>
+
+    <!-- Окно профиля -->
+    <div id="profile-popup" style="display: none;">
+        <h3>Ваш профиль</h3>
+        <img id="profile-pic" src="default-avatar.png" alt="Аватар" />
+        <input type="file" id="upload-avatar" accept="image/*">
+        <input type="text" id="profile-name" placeholder="Ваше имя">
+        <button onclick="saveProfile()">Сохранить</button>
+    </div>
+
+    <!-- Кнопка чата -->
+    <div id="chat-button">💬</div>
+    <input type="file" id="chat-icon-input" accept="image/*" style="display: none;" />
+
+    <!-- Чат -->
+    <div id="chat-popup" style="display: none;">
+        <div class="chat-header">
+            Чат
+            <button id="chat-close"></button>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            <!-- Пример сообщения -->
+            <div class="chat-message">
+
+                <div class="emoji-picker">
+                    <span class="emoji-btn">😡</span>
+                    <span class="emoji-btn">❤️</span>
+                    <span class="emoji-btn">😎</span>
+                    <span class="emoji-btn">👍</span>
+                    <span class="emoji-btn">👎</span>
+                </div>
+                <div class="emoji-reactions"></div>
+            </div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" placeholder="Напиши сообщение..." id="chat-text">
+            <input type="file" id="chat-image" accept="image/*">
+            <input type="file" id="chat-file" accept="video/*,.pdf,.doc,.docx,.txt,.zip">
+            <button id="chat-send">Отправить</button>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="header">
+        <div class="banner-container">
+            <img src="15.png" alt="Свиток">
+
+            <!-- Все ссылки в одной строке -->
+            <div class="banner-text link-row">
+                <a href="#moderators">модераторы</a>
+                <a href="#rules">правила</a>
+                <a href="#honor">доска почёта</a>
+                <a href="#facts">факты</a>
+                <a href="#bed">Bed Wars</a>
+                <a href="#pep">Бывшие модераоры</a>
+                <a href="#iii">новый спавен</a>
+                <a href="#ii1">PVP-арена</a>
+            </div>
+        </div>
+    </div>
 
 
 
     <!-- Раздел: Модераторы -->
     <!-- Раздел: Модераторы -->
-<section id="moderators" class="image-section" style="background-image: url('17.png');">
-    <div class="section-content">
-        <h3>Раздел: Модераторы</h3>
-        <p>Чтобы сдать модераторам, вам нужно:</p>
-        <ol>
-            <li>Быть на Доске почёта</li>
-            <li>Быть выбранным модератором</li>
-            <li>Уметь заполнять обменники</li>
-        </ol>
-        <button class="open-modal" data-modal="modal1">Подробнее</button>
-    </div>
-</section>
+    <section id="moderators" class="image-section" style="background-image: url('17.png');">
+        <div class="section-content">
+            <h3>Раздел: Модераторы</h3>
+            <p>Чтобы сдать модераторам, вам нужно:</p>
+            <ol>
+                <li>Быть на Доске почёта</li>
+                <li>Быть выбранным модератором</li>
+                <li>Уметь заполнять обменники</li>
+            </ol>
+            <button class="open-modal" data-modal="modal1">Подробнее</button>
+        </div>
+    </section>
 
-<!-- Раздел: Правила -->
-<section id="rules" class="image-section" style="background-image: url('17.png');">
-    <div class="section-content">
-        <h3>Раздел: Правила</h3>
-        <p>(Да, их надо соблюдать. Иначе – бан, мут, а может и шашлык из аккаунта 🥩)</p>
-        <button class="open-modal" data-modal="modal2">Подробнее</button>
-    </div>
-</section>
+    <!-- Раздел: Правила -->
+    <section id="rules" class="image-section" style="background-image: url('17.png');">
+        <div class="section-content">
+            <h3>Раздел: Правила</h3>
+            <p>(Да, их надо соблюдать. Иначе – бан, мут, а может и шашлык из аккаунта 🥩)</p>
+            <button class="open-modal" data-modal="modal2">Подробнее</button>
+        </div>
+    </section>
 
-<!-- Раздел: Доска почета -->
-<section id="honor" class="image-section" style="background-image: url('17.png');">
-    <div class="section-content">
-        <h3>Раздел: Доска почета</h3>
-        <p>
-            Как попасть на Доску Почёта?<br><br>
-            Чтобы оказаться на Доске Почёта, нужно:<br><br>
-            — Соблюдать все правила проекта.<br>
-            — Помогать другим игрокам и модераторам.<br><br>
-            Иногда проводятся выборы модераторов, а также турниры, где можно проявить себя и сдать модераторам.<br>
-            Если вы есть на доске почета, то вы можете получить кличку и 2 привилегии
-        </p>
-        <button class="open-modal" data-modal="modal3">Подробнее</button>
-    </div>
-</section>
+    <!-- Раздел: Доска почета -->
+    <section id="honor" class="image-section" style="background-image: url('17.png');">
+        <div class="section-content">
+            <h3>Раздел: Доска почета</h3>
+            <p>
+                Как попасть на Доску Почёта?<br><br>
+                Чтобы оказаться на Доске Почёта, нужно:<br><br>
+                — Соблюдать все правила проекта.<br>
+                — Помогать другим игрокам и модераторам.<br><br>
+                Иногда проводятся выборы модераторов, а также турниры, где можно проявить себя и сдать модераторам.<br>
+                Если вы есть на доске почета, то вы можете получить кличку и 2 привилегии
+            </p>
+            <button class="open-modal" data-modal="modal3">Подробнее</button>
+        </div>
+    </section>
 
-<!-- Раздел: Факты -->
-<section id="facts" class="image-section" style="background-image: url('17.png');">
-    <div class="section-content">
-        <h3>Раздел: Факты</h3>
-        <p>если что тут что то есть..</p>
-        <button class="open-modal" data-modal="modal4">Подробнее</button>
-    </div>
-</section>
+    <!-- Раздел: Факты -->
+    <section id="facts" class="image-section" style="background-image: url('17.png');">
+        <div class="section-content">
+            <h3>Раздел: Факты</h3>
+            <p>если что тут что то есть..</p>
+            <button class="open-modal" data-modal="modal4">Подробнее</button>
+        </div>
+    </section>
 
-<!-- Раздел: Галерея -->
-<section id="bed" class="image-section" style="background-image: url('17.png');">
-  <div class="section-content">
-    <h2 id="photo-title" style="text-align: center;">Фото Bed Wars</h2>
-    <div style="text-align: center;">
-      <button class="open-modal" data-modal="photoGalleryModal">Показать все фото</button>
-    </div>
-  </div>
-</section>
+    <!-- Раздел: Галерея -->
+    <section id="bed" class="image-section" style="background-image: url('17.png');">
+        <div class="section-content">
+            <h2 id="photo-title"> Раздел:Фото Bed Wars</h2>
+            <div>
+                <button class="open-modal" data-modal="photoGalleryModal">Показать все фото</button>
+            </div>
+        </div>
+    </section>
 
+    <section id="pep" class="image-section" style="background-image: url('17.png');">
+        <div class="section-content">
+            <h3>Раздел: Бывшие модераторы</h3>
+            <p>Тут не все бывшие модераторы:</p>
+            <button class="open-modal" data-modal="modal5">Подробнее</button>
+        </div>
+    </section>
+    <section id="iii" class="image-section" style="background-image: url('17.png');">
+        <div class="section-content">
+            <h3> Раздел: новый спавен</h3>
+            <p>спавен строил Администратор сервера:</p>
 
+            <button class="open-modal" data-modal="modal6">Подробнее</button>
+        </div>
+    </section>
+
+    <section id="ii1" class="image-section" style="background-image: url('17.png');">
+        <div class="section-content">
+            <h3>Раздел:PVP-арена</h3>
+            <p>PVP-аренау строил Администратор сервера:</p>
+
+            
+            <button class="open-modal" data-modal="modal7">Подробнее</button>
+    </section>
     <!-- Модальные окна -->
     <div class="modal" id="modal1">
         <div class="modal-content">
@@ -197,8 +285,80 @@
         </div>
     </div>
 
+    <div class="modal" id="modal5">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>📋 Список бывших модераторов</h3>
+            <ul>
+                <li><strong>AMEna</strong> — длительное отсутствие активности.</li>
+                <li><strong>LedyLeska</strong> — неактивна.</li>
+                <li><strong>Mary365</strong> — длительное отсутствие активности.</li>
+                <li><strong>egr (compot)</strong> — продавал яйца диких драконов.</li>
+                <li><strong>900 (DARINAL)</strong> — разрушил спавн.</li>
+                <li><strong>Fay</strong> — разрушил спавн.</li>
+                <li><strong>Vera_lol_lol</strong> — разрушил спавн.</li>
+                <li><strong>Goose_2023</strong> — большое количество жалоб.(информация не точня и вот)</li>
+                <li><strong>Monya</strong> — множество жалоб.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>📸фото нового спавна</h2>
+
+
+        </div>
+    </div>
+
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>📸фото PvP-арены-праивла PvP-арены</h2>
+                <section class="rules-container">
+                    <h2>⚔️ Правила PVP-Арены</h2>
+                    <ol class="rules-list">
+                        <li><strong>Перед началом боя обязательно договоритесь об условиях.</strong><br>
+                            Нарушение договорённостей — <span class="highlight">бан до 30 дней</span>.
+                        </li>
+                        <li><strong>Зелья использовать разрешено.</strong></li>
+                        <li><strong>Палочки использовать можно.</strong></li>
+                        <li><strong>Если у вас были ресурсы в инвентаре и вы умерли,</strong><br>
+                            и ресурсы сгорели в лаве или их подобрал другой игрок —<br>
+                            <span class="note">не просите модераторов вернуть их. Это часть игры.</span>
+                        </li>
+                        <li><strong>Договор перед боем обязателен!</strong><br>
+                            Без договорённости — последствия несёте сами.<br>
+                            <span class="note">
+                                Если был договор и после смерти ресурсы подобрал другой игрок — <span
+                                    class="highlight">возможен возврат через модератора</span>.<br>
+                                <strong>Важно:</strong> если ресурсы сгорели в лаве — <span class="highlight">возврат
+                                    невозможен</span>.
+                            </span>
+                        </li>
+                    </ol>
+                </section>
+
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px;">
+                <img src="22.jpeg" alt="фото 1" class="slider-img">
+                <img src="23.jpeg" alt="фото 1" class="slider-img">
+                <img src="24.jpeg" alt="фото 1" class="slider-img">
+                <img src="25.jpeg" alt="фото 1" class="slider-img">
+                <img src="21.jpeg" alt="фото 1" class="slider-img">
+
+            </div>
+
+        </div>
+    </div>
+
     <!-- 🔥 Новый раздел: Фото сервера (модалка с фото) -->
-    
+
 
     <!-- Модальное окно с фото -->
 
@@ -222,36 +382,36 @@
     </div>
 
 
- <!-- === Слайдер === -->
-<div class="slider"  >
-  <div class="slides" id="slider-track">
-    <img src="1.jpeg" alt="Слайд 1"></img>
-    <img src="2.jpeg" alt="Слайд 2"></img>
-    <img src="3.jpeg" alt="Слайд 2"></img>
-    <img src="4.jpeg" alt="Слайд 3"></img>
-     <img src="5.jpeg" alt="Слайд 3"></img>
-    
-  </div>
+    <!-- === Слайдер === -->
+    <div class="slider">
+        <div class="slides" id="slider-track">
+            <img src="1.jpeg" alt="Слайд 1"></img>
+            <img src="2.jpeg" alt="Слайд 2"></img>
+            <img src="3.jpeg" alt="Слайд 2"></img>
+            <img src="4.jpeg" alt="Слайд 3"></img>
+            <img src="5.jpeg" alt="Слайд 3"></img>
 
-  <!-- Кнопки -->
-  <button class="prev" onclick="changeSlide(-1)">❮</button>
-  <button class="next" onclick="changeSlide(1)">❯</button>
-</div>
-
-<!-- Точки -->
-<div class="dots" id="slider-dots"></div>
-
-
-
-
-
-        <div class="dots">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
         </div>
+
+        <!-- Кнопки -->
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+    </div>
+
+    <!-- Точки -->
+    <div class="dots" id="slider-dots"></div>
+
+
+
+
+
+    <div class="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
     </div>
 
     <div class="modal" id="modal4">
@@ -275,7 +435,12 @@
                 и начал делать <strong>первые видео</strong> про наш сервер!<br><br>
 
                 💪 На сервере также есть <strong>MEDIA</strong> — игрок, который каменной лопатой<br>
-                способен выкопать <strong>всю пустыню</strong>… а то и <strong>весь мир</strong>! 😄
+                способен выкопать <strong>всю пустыню</strong>… а то и <strong>весь мир</strong>! 😄<br><br>
+
+                ✨ И кстати — <strong>у нас появился совершенно новый спавн!</strong><br>
+                Он стал ещё более красивым, продуманным и полным секретов.<br>
+                Заходи — и обязательно найди все скрытые <strong>нычки</strong> и пасхалки! 🔥<br><br>
+
             </p>
         </div>
     </div>
@@ -283,12 +448,12 @@
 
 
     <!-- Подвал -->
-   <footer class="site-footer">
-    <div class="section-content">
-        <p>Это мини сайт про сервер ля ля ля</p>
-        <p><a href="https://t.me/lailailanowosti" target="_blank">Телеграм-канал</a></p>
-    </div>
-</footer>
+    <footer class="site-footer">
+        <div class="section-content">
+            <p>Это мини сайт про сервер ля ля ля</p>
+            <p><a href="https://t.me/lailailanowosti" target="_blank">Телеграм-канал</a></p>
+        </div>
+    </footer>
 
 
     <script src="script.js"></script>
