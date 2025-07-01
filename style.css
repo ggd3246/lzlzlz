@@ -201,7 +201,7 @@ body {
   
   width: 90%;
   max-width: 400px;
-
+  
   padding: 0 10px;
   margin: 8px 0;
   
@@ -209,18 +209,27 @@ body {
   font-size: 1em;
   color: #fff;
   
-  text-align: center;
-  white-space: normal;  /* чтобы текст переносился */
-  word-break: break-word;
+  text-align: left; /* Можно оставить left или center, как хочешь */
+  
+  /* Разделение на 2 колонки */
+  column-count: 2;
+  column-gap: 20px; /* Расстояние между колонками */
+  
+  /* Чтобы слова не выходили за рамки */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  
+  white-space: normal;
   line-height: 1.4em;
 }
 
 /* Мобильный адаптив */
 @media (max-width: 480px) {
   .banner-text.link-row {
-    font-size: 0.9em;
+    column-count: 1; /* На телефоне 1 колонка */
     max-width: 90vw;
     padding: 0 5px;
+    font-size: 0.9em;
   }
 }
 
