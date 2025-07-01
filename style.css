@@ -224,7 +224,7 @@ body {
 }
 
 .banner-text a {
-  color: #000;
+  color: #ffffff;
   text-decoration: none;
   padding: 2px 6px;
   border-radius: 5px;
@@ -247,17 +247,6 @@ body {
   .banner-text .bottom-row {
     grid-column: span 2;
   }
-}
-/* Сдвигаем "Доска почёта" влево */
-.column a[href="#honor"] {
-  margin-left: -10px; /* подбери значение под себя */
-  display: inline-block; /* чтобы margin работал */
-}
-
-/* Сдвигаем "Новый спавн" влево */
-.column a[href="#iii"] {
-  margin-left: -10px;
-  display: inline-block;
 }
 
 
