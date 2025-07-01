@@ -204,7 +204,7 @@ body {
   
   font-family: 'Minecraft', sans-serif;
   font-size: 0.8em;  /* Меньше размер */
-  color: #fff;
+  color: #000;       /* Чёрный цвет текста */
   
   text-align: center;
 }
@@ -218,7 +218,7 @@ body {
 }
 
 .banner-text.link-rows a {
-  color: #000000;
+  color: #000;        /* Чёрный текст ссылок */
   text-decoration: none;
   font-weight: 500;
   white-space: nowrap;
@@ -228,7 +228,7 @@ body {
 }
 
 .banner-text.link-rows a:hover {
-  color: #ffffff;
+  color: #555;       /* Тёмно-серый на ховер, чтобы не ярко */
 }
 
 /* Последний ряд с 2 ссылками */
@@ -256,6 +256,7 @@ body {
     margin-bottom: 6px;
     font-size: 0.7em;
     padding: 2px 5px;
+    color: #000;
   }
   
   .banner-text.link-rows .bottom-row a {
