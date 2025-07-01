@@ -199,54 +199,50 @@ body {
   left: 50%;
   transform: translateX(-50%);
   
- 
-
-  grid-template-columns: repeat(4, auto);
-  gap: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   
   justify-content: center;
   align-items: center;
-  
+
   font-family: 'Minecraft', sans-serif;
-  font-size: 0.4em; /* еще меньше */
-  color: #ffffff;
-  max-width: 95vw; /* ограничение ширины */
-  overflow-wrap: break-word;
-  word-break: break-word;
+  font-size: 0.9em;
+  color: #fff;
+
+  max-width: 95vw;
   text-align: center;
-  padding: 0 5px;
 }
 
-.banner-text .bottom-row {
-  grid-column: span 4;
+.banner-text .row {
   display: flex;
+  flex-wrap: wrap;
+  gap: 15px 20px;
   justify-content: center;
-  gap: 8px;
 }
 
 .banner-text a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
-  padding: 2px 6px;
+  padding: 3px 8px;
   border-radius: 5px;
   white-space: nowrap;
   transition: background-color 0.3s;
 }
 
 .banner-text a:hover {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
-@media (max-width: 480px) {
+/* Адаптив для телефона */
+@media (max-width: 600px) {
   .banner-text {
-    grid-template-columns: repeat(2, auto);
-    font-size: 0.35em; /* еще меньше на телефоне */
-    gap: 5px 6px;
-    max-width: 95vw;
+    top: 28%;
+    font-size: 0.75em;
   }
 
-  .banner-text .bottom-row {
-    grid-column: span 2;
+  .banner-text .row {
+    gap: 10px 15px;
   }
 }
 
