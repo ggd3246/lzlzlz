@@ -194,64 +194,53 @@ body {
 }
 
 .banner-text.link-columns {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 25px;
-
   position: absolute;
-  top: 28%;
+  top: 28%;               /* Поднимаем текст вверх */
   left: 50%;
   transform: translateX(-50%);
-
-  margin: 0;
+  
+  display: flex;
+  gap: 40px;              /* Расстояние между колонками */
+  
+  max-width: 600px;
   width: 90%;
-  max-width: 500px;
-
-  font-family: 'Minecraft', sans-serif;
   text-align: center;
+  font-family: 'Minecraft', sans-serif;
+  font-size: 1em;
   color: #fff;
-  font-size: 0.8em;
 }
 
-/* Колонки */
 .banner-text.link-columns .column {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-/* Ссылки */
+/* Ссылки — без фон и красиво */
 .banner-text.link-columns a {
-  color: #000000;
+  color: #fff;
   text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 8px;
-  transition: background-color 0.3s;
-  white-space: nowrap;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .banner-text.link-columns a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffd700; /* Например, золотой при наведении */
 }
 
-/* 🔥 Адаптив для телефона */
+/* Адаптив для телефонов */
 @media (max-width: 480px) {
   .banner-text.link-columns {
-    top: 28%;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 90%;
-    font-size: 0.75em;
-  }
-
-  .banner-text.link-columns {
-    align-items: center;
+    flex-direction: column;  /* Колонки подстраиваются в один столбец */
+    top: 28%;                /* сохраняем верхнюю позицию */
+    width: 90vw;
+    max-width: 90vw;
+    font-size: 0.9em;
+    gap: 20px;
   }
 
   .banner-text.link-columns .column {
-    flex-direction: column;
-    align-items: center;
+    align-items: center;     /* Центрируем ссылки в колонках */
   }
 }
 
