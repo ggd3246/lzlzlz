@@ -194,27 +194,44 @@ body {
 }
 
 .banner-text.link-row {
-  
+  position: absolute; /* добавил для top/left, если нужно */
   top: 27%;
   left: 50%;
   transform: translateX(-50%);
+  
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column; /* текст в колонку */
+  flex-wrap: nowrap; /* чтобы текст не ломался по flex */
+  
   justify-content: center;
-  gap: 10px;
-  width:90%;
-  text-align: center;
-  font-family: 'Minecraft', sans-serif;
-  font-size: 1.2em;
-  white-space: normal;
+  align-items: center;
+  
+  width: 90%;
+  max-width: 400px; /* ограничивает ширину блока — регулируй под себя */
+  
   padding: 0 10px;
   margin: 8px 0;
-  font-size: 1.0em;
-  flex-direction: column;
-  align-items: center;
-  color:#fff;
   
+  text-align: center;
+  font-family: 'Minecraft', sans-serif;
+  
+  font-size: 1em; /* базовый размер шрифта */
+  color: #fff;
+  
+  white-space: normal; /* перенос текста */
+  word-break: break-word; /* перенос слов при необходимости */
+  line-height: 1.4em; /* высота строки для читаемости */
 }
+
+/* Мобильный адаптив */
+@media (max-width: 480px) {
+  .banner-text.link-row {
+    font-size: 0.9em; /* чуть меньше на телефонах */
+    max-width: 90vw; /* подгоняем под ширину экрана */
+    padding: 0 5px;
+  }
+}
+
 /* Общий стиль для модального окна с фотками */
 .img-modal {
   position: fixed;
@@ -314,7 +331,7 @@ body {
     height: 50px;
     border-radius: 15px;
     object-fit: cover;
-    cursor: pointer; /* Чтобы было понятно, что можно кликать */
+    cursor: pointer;
     transition: transform 0.2s;
 }
 .img5 img:hover {
@@ -327,31 +344,32 @@ body {
     gap: 10px;
     margin-top: 20px;
     flex-wrap: wrap;
-    align-items: flex-end; /* Выравнивание по нижней линии */
+    align-items: flex-end;
 }
 
-/* Модальное окно для увеличенного фото */
+/* Модальное окно */
 #pvpImgModal {
     position: fixed;
     z-index: 9999;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    
     padding: 10px;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
     display: none;
     max-width: 95vw;
     max-height: 95vh;
+    background-color: #000; /* добавил фон, чтобы фото выделялось */
 }
 
-/* Картинка в модальном окне */
+/* Фото в модальном окне */
 #pvpImgInModal {
     max-width: 90vw;
     max-height: 80vh;
     border-radius: 15px;
     display: block;
+    object-fit: contain; /* чтобы фото не искажалось */
 }
 
 /* Крестик закрытия */
@@ -360,13 +378,15 @@ body {
     top: 5px;
     right: 10px;
     font-size: 28px;
-    color: rgb(255, 253, 253);
+    color: #fff;
     cursor: pointer;
     user-select: none;
+    background: rgba(0,0,0,0.5); /* чуть затемнил фон крестика */
+    padding: 2px 6px;
+    border-radius: 8px;
 }
 
-
-/* Адаптивность для телефона */
+/* Адаптив для телефонов */
 @media (max-width: 480px) {
     .img5 img {
         width: 60px;
@@ -377,12 +397,14 @@ body {
         max-width: 90vw;
         max-height: 90vh;
         padding: 8px;
+        border-radius: 12px;
     }
 
     #pvpCloseImg {
         font-size: 24px;
         top: 3px;
         right: 7px;
+        padding: 1px 5px;
     }
 }
 
@@ -409,6 +431,23 @@ body {
     justify-content: center;
     margin-top: 20px;
 }
+
+/* Фото внутри галереи */
+.gallery img {
+    width: 150px;       /* базовый размер фото */
+    height: auto;       /* сохраняет пропорции */
+    border-radius: 8px; /* чуть скруглим углы, если хочешь */
+    object-fit: cover;  /* обрезка по размеру */
+}
+
+/* Адаптив для телефонов */
+@media (max-width: 480px) {
+    .gallery img {
+        width: 45vw;   /* фото занимает почти половину ширины экрана */
+        max-width: 200px; /* максимальный размер */
+    }
+}
+
 
 /* Модалка для увеличенного фото */
 .img-modal {
