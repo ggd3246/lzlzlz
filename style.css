@@ -198,35 +198,54 @@ body {
   top: 27%;
   left: 50%;
   transform: translateX(-50%);
-  
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   width: 90%;
   max-width: 400px;
-  
-  padding: 0 10px;
+
+  padding: 10px;
   margin: 8px 0;
-  
+
+  text-align: center;
   font-family: 'Minecraft', sans-serif;
-  font-size: 0.65em; /* ещё меньше */
+
+  font-size: 0.9em;
   color: #fff;
-  
-  text-align: left;
-  
-  column-count: 2;
-  column-gap: 15px;
-  
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  
-  white-space: normal;
-  line-height: 1.3em;
+
+  line-height: 1.5em;
 }
 
+.text-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.text-line a {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.text-line a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Адаптив для телефона */
 @media (max-width: 480px) {
   .banner-text.link-row {
-    column-count: 1;
-    max-width: 90vw;
-    padding: 0 5px;
-    font-size: 0.6em; /* ещё меньше для телефона */
+    font-size: 0.7em;
+    max-width: 95vw;
+    padding: 5px;
   }
 }
 
