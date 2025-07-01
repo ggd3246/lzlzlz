@@ -199,7 +199,8 @@ body {
   left: 50%;
   transform: translateX(-50%);
   
-  display: grid;
+ 
+
   grid-template-columns: repeat(4, auto);
   gap: 6px 8px;
   
@@ -208,7 +209,7 @@ body {
   
   font-family: 'Minecraft', sans-serif;
   font-size: 0.4em; /* еще меньше */
-  color: #000;
+  color: #ffffff;
   max-width: 95vw; /* ограничение ширины */
   overflow-wrap: break-word;
   word-break: break-word;
