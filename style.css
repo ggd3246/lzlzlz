@@ -195,12 +195,12 @@ body {
 
 .banner-text.link-columns {
   position: absolute;
-  top: 28%;               /* Поднимаем текст вверх */
+  top: 28%;               
   left: 50%;
   transform: translateX(-50%);
   
   display: flex;
-  gap: 40px;              /* Расстояние между колонками */
+  gap: 20px;              /* Расстояние между колонками */
   
   max-width: 600px;
   width: 90%;
@@ -208,39 +208,43 @@ body {
   font-family: 'Minecraft', sans-serif;
   font-size: 1em;
   color: #fff;
+  flex-wrap: wrap;        /* Чтобы колонки не вылазили */
 }
 
 .banner-text.link-columns .column {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex: 1 1 45%;          /* Колонки занимают примерно по 45% ширины */
+  min-width: 120px;       /* Минимальная ширина, чтобы не сжималось слишком */
 }
 
 /* Ссылки — без фон и красиво */
 .banner-text.link-columns a {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .banner-text.link-columns a:hover {
-  color: #ffd700; /* Например, золотой при наведении */
+  color: #ffd700; /* Золотой при наведении */
 }
 
 /* Адаптив для телефонов */
 @media (max-width: 480px) {
   .banner-text.link-columns {
-    flex-direction: column;  /* Колонки подстраиваются в один столбец */
-    top: 28%;                /* сохраняем верхнюю позицию */
-    width: 90vw;
-    max-width: 90vw;
-    font-size: 0.9em;
-    gap: 20px;
+    width: 95vw;
+    max-width: 95vw;
+    font-size: 0.85em;
+    gap: 15px;
+    flex-wrap: wrap;      /* чтобы колонки переносятся, если не помещаются */
   }
 
   .banner-text.link-columns .column {
-    align-items: center;     /* Центрируем ссылки в колонках */
+    flex: 1 1 45%;        /* всё так же две колонки */
+    min-width: 45%;       /* немного меньше для лучше влезания */
+    align-items: center;  /* центрируем ссылки */
   }
 }
 
