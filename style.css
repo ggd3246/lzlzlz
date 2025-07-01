@@ -194,30 +194,23 @@ body {
 }
 
 .banner-text.link-row {
-  position: absolute; /* для top/left */
+  position: absolute;
   top: 27%;
   left: 50%;
   transform: translateX(-50%);
   
-  display: flex;
-  flex-direction: row; /* строка */
-  flex-wrap: wrap; /* чтобы переносилось */
-  
-  justify-content: center;
-  align-items: center;
-  
   width: 90%;
   max-width: 400px;
-  
+
   padding: 0 10px;
   margin: 8px 0;
   
-  text-align: center;
   font-family: 'Minecraft', sans-serif;
   font-size: 1em;
   color: #fff;
   
-  white-space: normal;
+  text-align: center;
+  white-space: normal;  /* чтобы текст переносился */
   word-break: break-word;
   line-height: 1.4em;
 }
@@ -228,9 +221,6 @@ body {
     font-size: 0.9em;
     max-width: 90vw;
     padding: 0 5px;
-    flex-direction: row;
-    flex-wrap: wrap; /* позволяет переносить слова */
-    gap: 5px; /* отступы между "полосками" */
   }
 }
 
