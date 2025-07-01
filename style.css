@@ -206,19 +206,19 @@ body {
   margin: 8px 0;
   
   font-family: 'Minecraft', sans-serif;
-  font-size: 0.8em; /* уменьшенный размер текста */
+  font-size: 0.65em; /* ещё меньше */
   color: #fff;
   
   text-align: left;
   
   column-count: 2;
-  column-gap: 20px;
+  column-gap: 15px;
   
   word-wrap: break-word;
   overflow-wrap: break-word;
   
   white-space: normal;
-  line-height: 1.4em;
+  line-height: 1.3em;
 }
 
 @media (max-width: 480px) {
@@ -226,7 +226,7 @@ body {
     column-count: 1;
     max-width: 90vw;
     padding: 0 5px;
-    font-size: 0.7em; /* ещё меньше на телефоне */
+    font-size: 0.6em; /* ещё меньше для телефона */
   }
 }
 
