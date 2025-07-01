@@ -194,43 +194,46 @@ body {
 }
 
 .banner-text.link-row {
-  position: absolute; /* добавил для top/left, если нужно */
+  position: absolute; /* для top/left */
   top: 27%;
   left: 50%;
   transform: translateX(-50%);
   
   display: flex;
-  flex-direction: column; /* текст в колонку */
-  flex-wrap: nowrap; /* чтобы текст не ломался по flex */
+  flex-direction: row; /* строка */
+  flex-wrap: wrap; /* чтобы переносилось */
   
   justify-content: center;
   align-items: center;
   
   width: 90%;
-  max-width: 400px; /* ограничивает ширину блока — регулируй под себя */
+  max-width: 400px;
   
   padding: 0 10px;
   margin: 8px 0;
   
   text-align: center;
   font-family: 'Minecraft', sans-serif;
-  
-  font-size: 1em; /* базовый размер шрифта */
+  font-size: 1em;
   color: #fff;
   
-  white-space: normal; /* перенос текста */
-  word-break: break-word; /* перенос слов при необходимости */
-  line-height: 1.4em; /* высота строки для читаемости */
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.4em;
 }
 
 /* Мобильный адаптив */
 @media (max-width: 480px) {
   .banner-text.link-row {
-    font-size: 0.9em; /* чуть меньше на телефонах */
-    max-width: 90vw; /* подгоняем под ширину экрана */
+    font-size: 0.9em;
+    max-width: 90vw;
     padding: 0 5px;
+    flex-direction: row;
+    flex-wrap: wrap; /* позволяет переносить слова */
+    gap: 5px; /* отступы между "полосками" */
   }
 }
+
 
 /* Общий стиль для модального окна с фотками */
 .img-modal {
