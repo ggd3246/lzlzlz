@@ -193,58 +193,72 @@ body {
   display: block;
 }
 
-.banner-text.link-columns {
+.banner-text.link-rows {
   position: absolute;
-  top: 28%;               
+  top: 28%;
   left: 50%;
   transform: translateX(-50%);
   
-  display: flex;
-  gap: 20px;              /* Расстояние между колонками */
-  
-  max-width: 600px;
   width: 90%;
-  text-align: center;
+  max-width: 600px;
+  
   font-family: 'Minecraft', sans-serif;
   font-size: 1em;
   color: #fff;
-  flex-wrap: wrap;        /* Чтобы колонки не вылазили */
+  
+  text-align: center;
 }
 
-.banner-text.link-columns .column {
+.banner-text.link-rows .text-row {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1 1 45%;          /* Колонки занимают примерно по 45% ширины */
-  min-width: 120px;       /* Минимальная ширина, чтобы не сжималось слишком */
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 12px;
+  flex-wrap: nowrap;
 }
 
-/* Ссылки — без фон и красиво */
-.banner-text.link-columns a {
-  color: #000000;
+.banner-text.link-rows a {
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
+  white-space: nowrap;
   transition: color 0.3s ease;
 }
 
-.banner-text.link-columns a:hover {
-  color: #ffd700; /* Золотой при наведении */
+.banner-text.link-rows a:hover {
+  color: #ffd700;
+}
+
+/* Последний ряд с 2 ссылками */
+.banner-text.link-rows .bottom-row {
+  justify-content: center;
+  gap: 30px;
 }
 
 /* Адаптив для телефонов */
 @media (max-width: 480px) {
-  .banner-text.link-columns {
-    width: 95vw;
-    max-width: 95vw;
+  .banner-text.link-rows {
     font-size: 0.85em;
-    gap: 15px;
-    flex-wrap: wrap;      /* чтобы колонки переносятся, если не помещаются */
+    width: 95vw;
   }
-
-  .banner-text.link-columns .column {
-    flex: 1 1 45%;        /* всё так же две колонки */
-    min-width: 45%;       /* немного меньше для лучше влезания */
-    align-items: center;  /* центрируем ссылки */
+  
+  .banner-text.link-rows .text-row {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  /* Ссылки будут по ширине, чтобы красиво распределялись */
+  .banner-text.link-rows a {
+    flex: 1 1 20%;
+    min-width: 70px;
+    margin-bottom: 8px;
+  }
+  
+  /* Последний ряд всегда 2 ссылки в ряд */
+  .banner-text.link-rows .bottom-row a {
+    flex: 1 1 40%;
+    min-width: 120px;
+    white-space: nowrap;
   }
 }
 
