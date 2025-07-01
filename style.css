@@ -193,59 +193,65 @@ body {
   display: block;
 }
 
-.banner-text.link-row {
+.banner-text.link-columns {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+
   position: absolute;
-  top: 27%;
+  top: 28%;
   left: 50%;
   transform: translateX(-50%);
 
+  margin: 0;
+  width: 90%;
+  max-width: 500px;
+
+  font-family: 'Minecraft', sans-serif;
+  text-align: center;
+  color: #fff;
+  font-size: 0.8em;
+}
+
+/* Колонки */
+.banner-text.link-columns .column {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  width: 90%;
-  max-width: 400px;
-
-  padding: 10px;
-  margin: 8px 0;
-
-  text-align: center;
-  font-family: 'Minecraft', sans-serif;
-
-  font-size: 0.9em;
-  color: #fff;
-
-  line-height: 1.5em;
-}
-
-.text-line {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 8px;
-  margin: 4px 0;
 }
 
-.text-line a {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 4px 8px;
-  border-radius: 8px;
-  color: #fff;
+/* Ссылки */
+.banner-text.link-columns a {
+  color: #000000;
   text-decoration: none;
-  transition: 0.3s;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  white-space: nowrap;
 }
 
-.text-line a:hover {
-  background: rgba(255, 255, 255, 0.2);
+.banner-text.link-columns a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Адаптив для телефона */
+/* 🔥 Адаптив для телефона */
 @media (max-width: 480px) {
-  .banner-text.link-row {
-    font-size: 0.7em;
-    max-width: 95vw;
-    padding: 5px;
+  .banner-text.link-columns {
+    top: 28%;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 90%;
+    font-size: 0.75em;
+  }
+
+  .banner-text.link-columns {
+    align-items: center;
+  }
+
+  .banner-text.link-columns .column {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
