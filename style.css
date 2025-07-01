@@ -193,76 +193,59 @@ body {
   display: block;
 }
 
-.banner-text.link-rows {
+.banner-text {
   position: absolute;
   top: 28%;
   left: 50%;
   transform: translateX(-50%);
   
-  width: 90%;
-  max-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 6px 8px;
+  
+  justify-content: center;
+  align-items: center;
   
   font-family: 'Minecraft', sans-serif;
-  font-size: 0.8em;  /* Меньше размер */
-  color: #000;       /* Чёрный цвет текста */
-  
+  font-size: 0.4em; /* еще меньше */
+  color: #000;
+  max-width: 95vw; /* ограничение ширины */
+  overflow-wrap: break-word;
+  word-break: break-word;
   text-align: center;
+  padding: 0 5px;
 }
 
-.banner-text.link-rows .text-row {
+.banner-text .bottom-row {
+  grid-column: span 4;
   display: flex;
   justify-content: center;
-  gap: 8px;           /* Меньше расстояние между ссылками */
-  margin-bottom: 8px; /* Меньше отступ между рядами */
-  flex-wrap: nowrap;
+  gap: 8px;
 }
 
-.banner-text.link-rows a {
-  color: #000;        /* Чёрный текст ссылок */
+.banner-text a {
+  color: #000;
   text-decoration: none;
-  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 5px;
   white-space: nowrap;
-  transition: color 0.3s ease;
-  padding: 2px 6px;  /* Чтобы ссылка выглядела компактнее */
-  font-size: 0.8em;  /* Меньше размер текста в ссылках */
+  transition: background-color 0.3s;
 }
 
-.banner-text.link-rows a:hover {
-  color: #555;       /* Тёмно-серый на ховер, чтобы не ярко */
+.banner-text a:hover {
+  background-color: rgba(0,0,0,0.1);
 }
 
-/* Последний ряд с 2 ссылками */
-.banner-text.link-rows .bottom-row {
-  justify-content: center;
-  gap: 12px;  /* Меньше расстояние между двумя ссылками */
-}
-
-/* Адаптив для телефонов */
 @media (max-width: 480px) {
-  .banner-text.link-rows {
-    font-size: 0.7em;  /* Ещё меньше на телефоне */
-    width: 95vw;
+  .banner-text {
+    grid-template-columns: repeat(2, auto);
+    font-size: 0.35em; /* еще меньше на телефоне */
+    gap: 5px 6px;
+    max-width: 95vw;
   }
-  
-  .banner-text.link-rows .text-row {
-    gap: 6px;        /* Ещё меньшее расстояние */
-    flex-wrap: wrap;
-    margin-bottom: 6px;
-  }
-  
-  .banner-text.link-rows a {
-    flex: 1 1 20%;
-    min-width: 60px;
-    margin-bottom: 6px;
-    font-size: 0.7em;
-    padding: 2px 5px;
-    color: #000;
-  }
-  
-  .banner-text.link-rows .bottom-row a {
-    flex: 1 1 40%;
-    min-width: 110px;
-    white-space: nowrap;
+
+  .banner-text .bottom-row {
+    grid-column: span 2;
   }
 }
 
