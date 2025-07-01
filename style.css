@@ -17,6 +17,168 @@ body {
   background: url('16.png');
 }
 
+/* Фон модального окна — затемнение */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none; /* скрыто по умолчанию */
+  z-index: 1000;
+  overflow: auto; /* чтобы можно было скроллить если содержимое высокое */
+}
+
+/* Контент модального окна */
+.modal-content {
+  background: #fff;
+  max-width: 400px;
+  width: 90%; /* чтобы сужалось на маленьких экранах */
+  margin: 10% auto; /* вертикальное выравнивание с отступами сверху и снизу */
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+/* Кнопка закрытия (крестик) */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+.close:hover {
+  color: #000;
+}
+
+/* Заголовки */
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1.3em;
+}
+
+/* Список ссылок */
+.modal-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+.modal-content ul li {
+  margin-bottom: 10px;
+}
+
+/* Ссылки */
+.modal-content a {
+  color: #0066cc;
+  text-decoration: none;
+}
+.modal-content a:hover {
+  text-decoration: underline;
+}
+
+/* Кнопка "Смотреть видео-инструкцию" */
+#show-video-btn {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+}
+#show-video-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Контейнер с видео */
+#video-container {
+  margin-top: 15px;
+}
+
+/* Видео элемент */
+#video-element {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  background: black;
+}
+
+/* Панель управления видео (кнопки) */
+#video-container > div {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 250px;
+}
+
+/* Кнопки управления видео */
+#video-container button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  font-size: 0.9em;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+#video-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Адаптивность для маленьких экранов */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;
+    margin: 15% auto;
+    padding: 15px;
+  }
+  #show-video-btn,
+  #video-container > div {
+    max-width: 100%;
+  }
+}
+
+
+ .link-list {
+                list-style: none;
+                padding: 0;
+                margin: 20px 0;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .link-list li a {
+                text-decoration: none;
+                color: #07141d;
+                background-color: #f2f2f2;
+                padding: 10px 15px;
+                border-radius: 8px;
+                display: inline-block;
+                transition: 0.3s;
+            }
+
+            .link-list li a:hover {
+                background-color: #000000;
+                color: rgb(0, 0, 0);
+            }
+
 /* ===== Шапка ===== */
 .banner-container {
   position: relative;
@@ -33,25 +195,282 @@ body {
 
 .banner-text.link-row {
   
-  top: 33%;
+  top: 27%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  width: 90%;
+  width:90%;
   text-align: center;
   font-family: 'Minecraft', sans-serif;
   font-size: 1.2em;
   white-space: normal;
   padding: 0 10px;
   margin: 8px 0;
-  font-size: 1.2em;
+  font-size: 1.0em;
   flex-direction: column;
   align-items: center;
+  color:#fff;
   
 }
+/* Общий стиль для модального окна с фотками */
+.img-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 9999;
+}
+
+/* Картинка в модалке */
+.img-modal img {
+  width: 100vw;      /* ширина на всю ширину экрана */
+  height: 100vh;     /* высота на всю высоту экрана */
+  object-fit: contain; /* чтобы сохранить пропорции и не обрезать */
+  border-radius: 0;  /* убираем скругление, чтобы было на весь экран */
+  box-shadow: none;  /* убираем тень */
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+/* Чёрный крестик */
+.close-img {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+  z-index: 10000;
+  user-select: none;
+}
+
+/* Стиль для маленьких превьюшек */
+.img8-thumb {
+  width: 80px;
+  height: 50px;
+  border-radius: 12px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.img8-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* Чтобы превью внизу красиво шли */
+.img8 > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: flex-end;
+}
+
+/* Модалка основная (с текстом и фото) */
+.modal-content {
+  background: rgb(58, 35, 35);
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Закрывающий крестик для основной модалки */
+.modal-content > .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Модалка основная */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+  padding: 10px;
+}
+
+
+.img5 img {
+    width: 80px;
+    height: 50px;
+    border-radius: 15px;
+    object-fit: cover;
+    cursor: pointer; /* Чтобы было понятно, что можно кликать */
+    transition: transform 0.2s;
+}
+.img5 img:hover {
+    transform: scale(1.05);
+}
+
+.img5 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    align-items: flex-end; /* Выравнивание по нижней линии */
+}
+
+/* Модальное окно для увеличенного фото */
+#pvpImgModal {
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    display: none;
+    max-width: 95vw;
+    max-height: 95vh;
+}
+
+/* Картинка в модальном окне */
+#pvpImgInModal {
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 15px;
+    display: block;
+}
+
+/* Крестик закрытия */
+#pvpCloseImg {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 28px;
+    color: rgb(255, 253, 253);
+    cursor: pointer;
+    user-select: none;
+}
+
+
+/* Адаптивность для телефона */
+@media (max-width: 480px) {
+    .img5 img {
+        width: 60px;
+        height: 40px;
+    }
+
+    #pvpImgModal {
+        max-width: 90vw;
+        max-height: 90vh;
+        padding: 8px;
+    }
+
+    #pvpCloseImg {
+        font-size: 24px;
+        top: 3px;
+        right: 7px;
+    }
+}
+
+
+     /* Маленькие превью-картинки */
+.slider-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.slider-img:hover {
+    transform: scale(1.05);
+}
+
+/* Галерея */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Модалка для увеличенного фото */
+.img-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.img-modal-content {
+    max-width: 95vw;
+    max-height: 80vh;
+    border-radius: 15px;
+    display: block;
+}
+
+/* Кнопка закрытия */
+.img-modal-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Адаптация для телефона */
+@media (max-width: 600px) {
+    .slider-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .img-modal {
+        padding: 8px;
+        border-radius: 12px;
+    }
+
+    .img-modal-content {
+        max-width: 90vw;
+        max-height: 70vh;
+    }
+
+    .img-modal-close {
+        font-size: 20px;
+        top: 4px;
+        right: 8px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
+
 
 .banner-text a {
   margin: 0 10px;
@@ -134,6 +553,7 @@ section button:hover {
   font-size: 24px;
   cursor: pointer;
   color: #000000;
+  
 }
 
 .close:hover {
@@ -199,15 +619,17 @@ section button:hover {
   display: flex;
   transition: transform 0.5s ease-in-out;
   height: 100%;
+  /* ширина всех слайдов в строку будет = количество слайдов * 100% (если нужно) */
 }
 
 .slides img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  flex-shrink: 0;
+  width: 100%;       /* занимают всю ширину слайда */
+  height: 100%;      /* занимают всю высоту слайда */
+  object-fit: cover; /* сохраняет пропорции, обрезая лишнее */
+  flex-shrink: 0;    /* не сжимается */
   border-radius: 15px;
 }
+
 
 .prev,
 .next {
@@ -1073,5 +1495,141 @@ background: linear-gradient(182deg,rgba(37, 77, 28, 1) 0%, rgba(43, 240, 59, 1) 
 
   .chat-input-area button {
     font-size: 14px;
+  }
+}
+/* Мобильные устройства (до 480px) — маленькие телефоны */
+@media (max-width: 480px) {
+  /* Форма регистрации */
+  .form-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+  .form-container input,
+  .form-container button {
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  /* Иконка профиля */
+  #profile-icon {
+    top: 8px;
+    right: 8px;
+  }
+  #profile-icon img {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Попап профиля */
+  #profile-popup {
+    top: 50px;
+    right: 5px;
+    width: 90%;
+    font-size: 14px;
+    padding: 12px;
+  }
+  #profile-popup img {
+    width: 64px;
+    height: 64px;
+  }
+  #profile-popup input,
+  #profile-popup button {
+    width: 100%;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  /* Чат */
+  #chat-popup {
+    height: 100vh;
+    padding: 8px;
+  }
+  .chat-message {
+    font-size: 13px;
+    max-width: 90%;
+  }
+  .emoji-picker {
+    bottom: -40px;
+    left: 5px;
+    transform: scale(0.95);
+  }
+  .emoji-reactions {
+    gap: 5px;
+    font-size: 14px;
+  }
+  .chat-input input[type="text"],
+  .chat-input button {
+    font-size: 14px;
+  }
+
+  /* Кнопка чата */
+  #chat-button {
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+    line-height: 45px;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+/* Планшеты и маленькие экраны (до 768px) */
+@media (max-width: 768px) {
+  /* Чат окно */
+  .chat-box {
+    width: 100%;
+    height: 100vh;
+    border-left: none;
+    border-top: none;
+    border-radius: 0;
+  }
+
+  /* Кнопка открытия чата */
+  .chat-toggle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .chat-input-area input[type="text"],
+  .chat-input-area button {
+    font-size: 14px;
+  }
+}
+
+/* Очень маленькие устройства (iPhone SE и меньше, до 400px) */
+@media (max-width: 400px) {
+  .chat-message {
+    font-size: 12px;
+  }
+  .emoji-reactions {
+    gap: 4px;
+    font-size: 13px;
+  }
+  .emoji-picker {
+    transform: scale(0.9);
+  }
+}
+
+/* Средние экраны (до 1024px) - дополнительная настройка */
+@media (max-width: 1024px) {
+  section {
+    width: 90%;
+    padding: 30px 15px;
+  }
+  section button {
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+  #glitch-title {
+    font-size: 18px;
+  }
+  #rotating-earth {
+    width: 140px;
+    height: 140px;
+  }
+  #enter-site-btn {
+    font-size: 15px;
+    padding: 10px 16px;
   }
 }
