@@ -206,16 +206,14 @@ body {
   margin: 8px 0;
   
   font-family: 'Minecraft', sans-serif;
-  font-size: 1em;
+  font-size: 0.8em; /* уменьшенный размер текста */
   color: #fff;
   
-  text-align: left; /* Можно оставить left или center, как хочешь */
+  text-align: left;
   
-  /* Разделение на 2 колонки */
   column-count: 2;
-  column-gap: 20px; /* Расстояние между колонками */
+  column-gap: 20px;
   
-  /* Чтобы слова не выходили за рамки */
   word-wrap: break-word;
   overflow-wrap: break-word;
   
@@ -223,13 +221,12 @@ body {
   line-height: 1.4em;
 }
 
-/* Мобильный адаптив */
 @media (max-width: 480px) {
   .banner-text.link-row {
-    column-count: 1; /* На телефоне 1 колонка */
+    column-count: 1;
     max-width: 90vw;
     padding: 0 5px;
-    font-size: 0.9em;
+    font-size: 0.7em; /* ещё меньше на телефоне */
   }
 }
 
